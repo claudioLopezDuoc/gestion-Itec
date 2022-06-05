@@ -24,7 +24,7 @@ if (isset($_SESSION["usu_id"])) {
                     <div class="tbl">
                         <div class="tbl-row">
                             <div class="tbl-cell">
-                                <h3 id="lblnomidticket">Detalle Ticket - 1</h3>
+                                <h3 id="lblnomidticket"></h3>
                                 <div id="lblestado"></div>
                                 <span class="label label-pill label-primary" id="lblnomusuario"></span>
                                 <span class="label label-pill label-default" id="lblfechcrea"></span>
@@ -57,7 +57,10 @@ if (isset($_SESSION["usu_id"])) {
                         <div class="col-lg-12">
                             <fieldset class="form-group">
                                 <label class="form-label semibold" for="tickd_descripusu">Descripción</label>
-                                <input type="text" class="form-control" id="tickd_titulo" name="tick_titulo">
+                                <div class="summernote-theme-1">
+                                    <textarea id="tickd_descripusu" name="tickd_descripusu" class="summernote" name="name"></textarea>
+                                </div>
+
                             </fieldset>
                         </div>
 
@@ -67,13 +70,10 @@ if (isset($_SESSION["usu_id"])) {
                 <section class="activity-line" id="lbldetalle">
 
                 </section>
-
-                <div class="box-typical box-typical-padding">
-
+                <!-- Input conversación -->
+                <div class="box-typical box-typical-padding" id="pnldetalle">
                     <p>Ingresar su duda o consultA</p>
-
                     <div class="row">
-
                         <div class="col-lg-12">
                             <fieldset class="form-group">
                                 <label class="form-label semibold" for="tickd_descrip">Descripción</label>
@@ -83,13 +83,12 @@ if (isset($_SESSION["usu_id"])) {
                             </fieldset>
                         </div>
                         <div class="col-lg-12">
-                            <button type="submit" name="action" value="add" class="btn btn-rounded btn-inline btn-primary">Enviar</button>
-                            <button type="submit" name="action" value="add" class="btn btn-rounded btn-inline btn-success">Cerrar Ticker</button>
+                            <button type="button" id="btnenviar" class="btn btn-rounded btn-inline btn-primary">Enviar</button>
+                            <button type="button" id="btncerrarticket" class="btn btn-rounded btn-inline btn-success">Cerrar Ticker</button>
                         </div>
                     </div>
-
                 </div>
-
+                <!-- Input conversación -->
 
             </div>
         </div>

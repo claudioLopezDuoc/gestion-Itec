@@ -6,7 +6,12 @@ $ticket = new Ticket();
 switch ($_GET["op"]) {
   case "insert":
     $ticket->insert_ticket($_POST["usu_id"], $_POST["cat_id"], $_POST["tick_titulo"], $_POST["tick_descrip"]);
-    break;
+  break;
+
+  case "update":
+    $ticket->update_ticket($_POST["tick_id"]);
+    $ticket->insert_ticketdetalle_cerrar($_POST["tick_id"],$_POST["usu_id"]);
+  break;
 
   case "listar_x_usu":
     $datos = $ticket->listar_ticket_x_usu($_POST["usu_id"]);
@@ -37,7 +42,7 @@ switch ($_GET["op"]) {
       "aaData" => $data
     );
     echo json_encode($results);
-    break;
+  break;
 
   case "listar":
     $datos = $ticket->listar_ticket();
@@ -67,7 +72,7 @@ switch ($_GET["op"]) {
       "aaData" => $data
     );
     echo json_encode($results);
-    break;
+  break;
 
   case "listardetalle":
     $datos = $ticket->listar_ticketdetalle_x_ticket($_POST["tick_id"]);
@@ -151,5 +156,9 @@ switch ($_GET["op"]) {
                 }
                 echo json_encode($output);
             }   
-        break;
+  break;
+
+  case "insertdetalle":
+    $ticket->insert_ticketdetalle($_POST["tick_id"],$_POST["usu_id"],$_POST["tickd_descrip"]);
+  break;
         }
