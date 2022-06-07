@@ -88,7 +88,7 @@ switch ($_GET["op"]) {
                             <div class="activity-line-item-user">
                                 <div class="activity-line-item-user-photo">
                                     <a href="#">
-                                        <img src="../../public/img/photo-64-2.jpg" alt="">
+                                        <img src="../../public/img/<?php echo $row['rol_id']?>.png" alt="">
                                     </a>
                                 </div>
                                 <div class="activity-line-item-user-name">
