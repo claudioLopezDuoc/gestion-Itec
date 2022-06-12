@@ -56,7 +56,7 @@
 	</div>
 	<!-- Contenido -->
 
-
+	<?php require_once("modalmantenimiento.php");?>
 
 	<?php require_once("../MainJs/js.php");?>
 	

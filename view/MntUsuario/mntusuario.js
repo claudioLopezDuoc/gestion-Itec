@@ -22,7 +22,7 @@ function guardaryeditar(e) {
             $('#usuario_data').DataTable().ajax.reload();
 
             swal({
-                title: "HelpDesk!",
+                title: "Itec!",
                 text: "Completado.",
                 type: "success",
                 confirmButtonClass: "btn-success"
