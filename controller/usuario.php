@@ -5,13 +5,13 @@
 
     switch($_GET["op"]){
         case "guardaryeditar":
-            if(empty($_POST["usu_id"])){    
-                $usuario->insert_usuario($_POST["usu_nom"],$_POST["usu_ape"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["rol_id"]);    
+            if(empty($_POST["usu_id"])){       
+                $usuario->insert_usuario($_POST["usu_nom"],$_POST["usu_ape"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["rol_id"]);     
             }
             else {
                 $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"],$_POST["usu_ape"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["rol_id"]);
             }
-        break;
+            break;
 
         case "listar":
             $datos=$usuario->get_usuario();
@@ -99,6 +99,19 @@
         case "grafico";
             $datos=$usuario->get_usuario_grafico($_POST["usu_id"]);  
             echo json_encode($datos);
+        break;
+
+
+        case "combo";
+            $datos = $usuario->get_usuario_x_rol();
+            if(is_array($datos)==true and count($datos)>0){
+                $html.= "<option label='Seleccionar'></option>";
+                foreach($datos as $row)
+                {
+                    $html.= "<option value='".$row['usu_id']."'>".$row['usu_nom']."</option>";
+                }
+                echo $html;
+            }
         break;
         
     }

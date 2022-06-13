@@ -1,16 +1,16 @@
 function init() {
 
 }
+
 $(document).ready(function() {
     var tick_id = getUrlParameter('ID');
 
     listardetalle(tick_id);
 
-
     $('#tickd_descrip').summernote({
-        height: 150,
+        height: 400,
         lang: "es-ES",
-        callback: {
+        callbacks: {
             onImageUpload: function(image) {
                 console.log("Image detect...");
                 myimagetreat(image[0]);
@@ -18,15 +18,84 @@ $(document).ready(function() {
             onPaste: function(e) {
                 console.log("Text detect...");
             }
-        }
+        },
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
     });
 
     $('#tickd_descripusu').summernote({
-        height: 200,
-        lang: "es-ES"
+        height: 400,
+        lang: "es-ES",
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']]
+        ]
     });
+
     $('#tickd_descripusu').summernote('disable');
 
+    tabla = $('#documentos_data').dataTable({
+        "aProcessing": true,
+        "aServerSide": true,
+        dom: 'Bfrtip',
+        "searching": true,
+        lengthChange: false,
+        colReorder: true,
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ],
+        "ajax": {
+            url: '../../controller/documento.php?op=listar',
+            type: "post",
+            data: { tick_id: tick_id },
+            dataType: "json",
+            error: function(e) {
+                console.log(e.responseText);
+            }
+        },
+        "bDestroy": true,
+        "responsive": true,
+        "bInfo": true,
+        "iDisplayLength": 10,
+        "autoWidth": false,
+        "language": {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            }
+        }
+    }).DataTable();
 
 });
 
@@ -44,7 +113,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
-
 
 $(document).on("click", "#btnenviar", function() {
     var tick_id = getUrlParameter('ID');
@@ -64,7 +132,7 @@ $(document).on("click", "#btnenviar", function() {
 
 $(document).on("click", "#btncerrarticket", function() {
     swal({
-            title: "ItecGroup",
+            title: "HelpDesk",
             text: "Esta seguro de Cerrar el Ticket?",
             type: "warning",
             showCancelButton: true,
@@ -89,7 +157,7 @@ $(document).on("click", "#btncerrarticket", function() {
                 listardetalle(tick_id);
 
                 swal({
-                    title: "ItecGroup!",
+                    title: "HelpDesk!",
                     text: "Ticket Cerrado correctamente.",
                     type: "success",
                     confirmButtonClass: "btn-success"
@@ -120,8 +188,6 @@ function listardetalle(tick_id) {
             $('#pnldetalle').hide();
         }
     });
-
-
 }
 
 init();

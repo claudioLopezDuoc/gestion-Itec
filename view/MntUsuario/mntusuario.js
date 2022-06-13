@@ -22,7 +22,7 @@ function guardaryeditar(e) {
             $('#usuario_data').DataTable().ajax.reload();
 
             swal({
-                title: "Itec!",
+                title: "HelpDesk!",
                 text: "Completado.",
                 type: "success",
                 confirmButtonClass: "btn-success"
@@ -103,8 +103,8 @@ function editar(usu_id) {
 
 function eliminar(usu_id) {
     swal({
-            title: "Itec",
-            text: "Esta seguro de Eliminar el usuario?",
+            title: "HelpDesk",
+            text: "Esta seguro de Eliminar el registro?",
             type: "error",
             showCancelButton: true,
             confirmButtonClass: "btn-danger",
@@ -121,8 +121,8 @@ function eliminar(usu_id) {
                 $('#usuario_data').DataTable().ajax.reload();
 
                 swal({
-                    title: "Itec",
-                    text: "Usuario Eliminado.",
+                    title: "HelpDesk!",
+                    text: "Registro Eliminado.",
                     type: "success",
                     confirmButtonClass: "btn-success"
                 });
