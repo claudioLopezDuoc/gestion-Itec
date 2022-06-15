@@ -8,7 +8,7 @@ $(document).ready(function() {
     listardetalle(tick_id);
 
     $('#tickd_descrip').summernote({
-        height: 400,
+        height: 300,
         lang: "es-ES",
         callbacks: {
             onImageUpload: function(image) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
 
     $('#tickd_descripusu').summernote({
-        height: 400,
+        height: 200,
         lang: "es-ES",
         toolbar: [
             ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -48,15 +48,10 @@ $(document).ready(function() {
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
-        "searching": true,
+        "searching": false,
         lengthChange: false,
         colReorder: true,
-        buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ],
+        buttons: [],
         "ajax": {
             url: '../../controller/documento.php?op=listar',
             type: "post",
@@ -73,12 +68,12 @@ $(document).ready(function() {
         "autoWidth": false,
         "language": {
             "sProcessing": "Procesando...",
-            "sLengthMenu": "Mostrar _MENU_ registros",
-            "sZeroRecords": "No se encontraron resultados",
-            "sEmptyTable": "Ningún dato disponible en esta tabla",
-            "sInfo": "Mostrando un total de _TOTAL_ registros",
-            "sInfoEmpty": "Mostrando un total de 0 registros",
-            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sLengthMenu": "Mostrar _MENU_ documentos",
+            "sZeroRecords": "No se encontraron documentos",
+            "sEmptyTable": "Ningún documento adjunto",
+            "sInfo": "Mostrando un total de _TOTAL_ documentos",
+            "sInfoEmpty": "Mostrando un total de 0 documentos",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ documentos)",
             "sInfoPostFix": "",
             "sSearch": "Buscar:",
             "sUrl": "",

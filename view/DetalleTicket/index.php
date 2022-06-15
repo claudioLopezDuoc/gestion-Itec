@@ -5,7 +5,7 @@ if (isset($_SESSION["usu_id"])) {
   <!DOCTYPE html>
   <html>
   <?php require_once("../MainHead/head.php"); ?>
-  <title>AnderCode</>::Detalle Ticket</title>
+  <title>Itec - Detalle Ticket</title>
   </head>
 
   <body class="with-side-menu">
@@ -25,11 +25,11 @@ if (isset($_SESSION["usu_id"])) {
             <div class="tbl-row">
               <div class="tbl-cell">
                 <h3 id="lblnomidticket">Detalle Ticket - 1</h3>
-                <div id="lblestado"></div>
                 <span class="label label-pill label-primary" id="lblnomusuario"></span>
                 <span class="label label-pill label-default" id="lblfechcrea"></span>
+                <span id="lblestado"></span>
                 <ol class="breadcrumb breadcrumb-simple">
-                  <li><a href="#">Home</a></li>
+                  <li><a href="..\Home\">Home</a></li>
                   <li class="active">Detalle Ticket</li>
                 </ol>
               </div>
@@ -53,14 +53,13 @@ if (isset($_SESSION["usu_id"])) {
                   <input type="text" class="form-control" id="tick_titulo" name="tick_titulo" readonly>
                 </fieldset>
               </div>
-
               <div class="col-lg-12">
                 <fieldset class="form-group">
-                  <label class="form-label semibold" for="tick_titulo">Documentos Adicionales</label>
+                  <label class="form-label semibold text-center" for="tick_titulo">Documentos Adicionales</label>
                   <table id="documentos_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
                     <thead>
                       <tr>
-                        <th style="width: 90%;">Nombre</th>
+                        <th style="width: 70%;">Nombre documento</th>
                         <th class="text-center" style="width: 10%;"></th>
                       </tr>
                     </thead>
@@ -90,13 +89,11 @@ if (isset($_SESSION["usu_id"])) {
         </section>
 
         <div class="box-typical box-typical-padding" id="pnldetalle">
-          <p>
-            Ingrese su duda o consulta
-          </p>
+        
           <div class="row">
               <div class="col-lg-12">
                 <fieldset class="form-group">
-                  <label class="form-label semibold" for="tickd_descrip">Descripción</label>
+                  <label class="form-label semibold" for="tickd_descrip">Ingrese su respuesta</label>
                   <div class="summernote-theme-1">
                     <textarea id="tickd_descrip" name="tickd_descrip" class="summernote" name="name"></textarea>
                   </div>

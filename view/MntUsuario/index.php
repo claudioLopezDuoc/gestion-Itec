@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>AnderCode</>::Mantenimiento Usuario</title>
+	<title>Itec - Gestión de Usuarios</title>
 </head>
 <body class="with-side-menu">
 
@@ -22,10 +22,10 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Mantenimiento Usuario</h3>
+							<h3>Gestión de Usuarios</h3>
 							<ol class="breadcrumb breadcrumb-simple">
-								<li><a href="#">Home</a></li>
-								<li class="active">Mantenimiento Usuario</li>
+								<li><a href="../Home/">Home</a></li>
+								<li class="active">Gestión de Usuarios</li>
 							</ol>
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 			</header>
 
 			<div class="box-typical box-typical-padding">
-				<button type="button" id="btnnuevo" class="btn btn-inline btn-primary">Nuevo Registro</button>
+				<button type="button" id="btnnuevo" class="btn btn-inline btn-primary">Nuevo Usuario</button>
 				<table id="usuario_data" class="table table-bordered table-striped table-vcenter js-dataTable-full">
 					<thead>
 						<tr>

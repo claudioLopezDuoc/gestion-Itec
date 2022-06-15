@@ -8,7 +8,7 @@ function init() {
 
 $(document).ready(function() {
     $('#tick_descrip').summernote({
-        height: 150,
+        height: 200,
         lang: "es-ES",
         callbacks: {
             onImageUpload: function(image) {
@@ -62,7 +62,7 @@ function guardaryeditar(e) {
 
                 $('#tick_titulo').val('');
                 $('#tick_descrip').summernote('reset');
-                swal("Correcto!", "Registrado Correctamente", "success");
+                swal("Itrc", "Ticket Ingresado", "success");
             }
         });
     }

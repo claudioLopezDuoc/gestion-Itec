@@ -35,15 +35,11 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-
-
-
                 <form class="sign-box" action="" method="post" id="login_form">
-                <input type="hidden" id="rol_id" value="1">
-                    <div class="sign-avatar">
-                        <img src="public/img/1.png" alt="" id="imgtipo">
+                    <div class="image">
+                        <img src="public/img/logo-itec.png" alt="" id="imgtipo" class="img-fluid" alt="Responsive image">
                     </div>
-                    <header class="sign-title" id="lbltitulo">Acceso Usuario</header>
+                    <header class="sign-title" id="lbltitulo">Iniciar Sesión</header>
 
                     <?php
                     if (isset($_GET["m"])) {
@@ -75,22 +71,11 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
                     }
                     ?>
 
-
-
-
                     <div class="form-group">
                         <input type="text" id="usu_correo" name="usu_correo" class="form-control" placeholder="E-Mail " />
                     </div>
                     <div class="form-group">
                         <input type="password" id="usu_pass" name="usu_pass" class="form-control" placeholder="Password" />
-                    </div>
-                    <div class="form-group">
-                        <div class="float-right reset">
-                            <a href="reset-password.html">Cambiar contraseña</a>
-                        </div>
-                        <div class="float-left reset">
-                            <a href="#" id="btnsoporte">Acceso Soporte</a>
-                        </div>
                     </div>
                     <input type="hidden" name="enviar" class="form-control" value="si">
                     <button type="submit" class="btn btn-rounded">Iniciar Sesión</button>
@@ -104,27 +89,9 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     <script src="public/js/lib/bootstrap/bootstrap.min.js"></script>
     <script src="public/js/plugins.js"></script>
     <script type="text/javascript" src="public/js/lib/match-height/jquery.matchHeight.min.js"></script>
-    <script>
-        $(function() {
-            $('.page-center').matchHeight({
-                target: $('html')
-            });
 
-            $(window).resize(function() {
-                setTimeout(function() {
-                    $('.page-center').matchHeight({
-                        remove: true
-                    });
-                    $('.page-center').matchHeight({
-                        target: $('html')
-                    });
-                }, 100);
-            });
-        });
-    </script>
     <script src="public/js/app.js"></script>
 
-    <script type="text/javascript" src="index.js"></script>-->
 </body>
 
 </html>

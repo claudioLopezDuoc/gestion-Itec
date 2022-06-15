@@ -11,15 +11,15 @@
                 <div class="modal-body">
                     <input type="hidden" id="usu_id" name="usu_id">
                     <div class="form-group">
-                        <label class="form-label" for="usu_nom">Nombre</label>
+                        <label class="form-label" for="usu_nom">Nombres</label>
                         <input type="text" class="form-control" id="usu_nom" name="usu_nom" placeholder="Ingrese Nombre" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="usu_ape">Apellido</label>
+                        <label class="form-label" for="usu_ape">Apellidos</label>
                         <input type="text" class="form-control" id="usu_ape" name="usu_ape" placeholder="Ingrese Apellido" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="usu_correo">Correo Electronico</label>
+                        <label class="form-label" for="usu_correo">E-mail</label>
                         <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="test@test.com" required>
                     </div>
                     <div class="form-group">
@@ -31,6 +31,7 @@
                         <select class="select2" id="rol_id" name="rol_id">
                             <option value="1">Usuario</option>
                             <option value="2">Soporte</option>
+                            <option value="3">Administrador</option>
                         </select>
                     </div>
                 </div>

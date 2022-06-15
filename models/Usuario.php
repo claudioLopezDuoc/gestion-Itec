@@ -7,16 +7,14 @@
             if(isset($_POST["enviar"])){
                 $correo = $_POST["usu_correo"];
                 $pass = $_POST["usu_pass"];
-                $rol = $_POST["rol_id"];
                 if(empty($correo) and empty($pass)){
                     header("Location:".conectar::ruta()."index.php?m=2");
 					exit();
                 }else{
-                    $sql = "SELECT * FROM tm_usuario WHERE usu_correo=? and usu_pass=MD5(?) and rol_id=? and est=1";
+                    $sql = "SELECT * FROM tm_usuario WHERE usu_correo=? and usu_pass=MD5(?) and est=1";
                     $stmt=$conectar->prepare($sql);
                     $stmt->bindValue(1, $correo);
                     $stmt->bindValue(2, $pass);
-                    $stmt->bindValue(3, $rol);
                     $stmt->execute();
                     $resultado = $stmt->fetch();
                     if (is_array($resultado) and count($resultado)>0){
@@ -121,7 +119,7 @@
         public function get_usuario_totalabierto_x_id($usu_id){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and tick_estado='Abierto'";
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and tick_estado='En proceso'";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $usu_id);
             $sql->execute();

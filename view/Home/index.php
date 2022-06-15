@@ -6,7 +6,7 @@
 <html>
     <?php require_once("../MainHead/head.php");?>
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-	<title>AnderCode</>::Home</title>
+	<title>Itec - Inicio</title>
 </head>
 <body class="with-side-menu">
 
@@ -34,7 +34,7 @@
 	                        <article class="statistic-box yellow">
 	                            <div>
 	                                <div class="number" id="lbltotalabierto"></div>
-	                                <div class="caption"><div>Total de Tickets Abiertos</div></div>
+	                                <div class="caption"><div>Tickets en progreso</div></div>
 	                            </div>
 	                        </article>
 	                    </div>
@@ -42,7 +42,7 @@
 	                        <article class="statistic-box red">
 	                            <div>
 	                                <div class="number" id="lbltotalcerrado"></div>
-	                                <div class="caption"><div>Total de Tickets Cerrados</div></div>
+	                                <div class="caption"><div>Tickets Cerrados</div></div>
 	                            </div>
 	                        </article>
 	                    </div>
@@ -52,7 +52,7 @@
 
 			<section class="card">
 				<header class="card-header">
-					Grafico Estadístico
+					Grafico Tickets
 				</header>
 				<div class="card-block">
 					<div id="divgrafico" style="height: 250px;"></div>

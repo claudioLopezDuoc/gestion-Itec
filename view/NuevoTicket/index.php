@@ -5,7 +5,7 @@ if (isset($_SESSION["usu_id"])) {
 	<!DOCTYPE html>
 	<html>
 	<?php require_once("../MainHead/head.php"); ?>
-	<title>Bienvenido Sistema Itec</>::Nuevo Ticket</title>
+	<title>Itec - Ingresar Ticket</title>
 	</head>
 
 	<body class="with-side-menu">
@@ -26,8 +26,8 @@ if (isset($_SESSION["usu_id"])) {
 						<div class="tbl-cell">
 							<h3>Nuevo Ticket</h3>
 							<ol class="breadcrumb breadcrumb-simple">
-								<li><a href="#">Home</a></li>
-								<li class="active">Nuevo Ticket</li>
+								<li><a href="../Home/">Home</a></li>
+								<li class="active">Ingresar Ticket</li>
 							</ol>
 						</div>
 					</div>
@@ -35,11 +35,7 @@ if (isset($_SESSION["usu_id"])) {
 			</header>
 
 			<div class="box-typical box-typical-padding">
-				<p>
-					Desde esta ventana podra generar nuevos tickets de HelpDesk.
-				</p>
-
-				<h5 class="m-t-lg with-border">Ingresar Información</h5>
+			<h5 class="m-t-lg with-border">Ingresar Información</h5>
 
 				<div class="row">
 					<form method="post" id="ticket_form">

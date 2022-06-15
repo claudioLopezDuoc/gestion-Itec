@@ -11,7 +11,7 @@
                 <div class="modal-body">
                     <input type="hidden" id="tick_id" name="tick_id">
                     <div class="form-group">
-                        <label class="form-label" for="usu_asig">Soporte</label>
+                        <label class="form-label" for="usu_asig">Técnicos Soporte</label>
                         <select class="select2" id="usu_asig" name="usu_asig" data-placeholder="Seleccionar" required>
                         </select>
                     </div>

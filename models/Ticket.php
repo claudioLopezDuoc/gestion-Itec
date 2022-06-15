@@ -180,7 +180,7 @@
             parent::set_names();
             $sql="update tm_ticket 
                 set	
-                    tick_estado = 'Abierto'
+                    tick_estado = 'En proceso'
                 where
                     tick_id = ?";
             $sql=$conectar->prepare($sql);
@@ -217,7 +217,7 @@
         public function get_ticket_totalabierto(){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where tick_estado='Abierto'";
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where tick_estado='En proceso'";
             $sql=$conectar->prepare($sql);
             $sql->execute();
             return $resultado=$sql->fetchAll();

@@ -34,12 +34,12 @@ class Email extends PHPMailer{
         $this->Password = $this->gContrasena;
         $this->From = $this->gCorreo;
         $this->SMTPSecure = 'tls';
-        $this->FromName = $this->tu_nombre = "Ticket Abierto ".$id;
+        $this->FromName = $this->tu_nombre = "Ticket  ".$id;
         $this->CharSet = 'UTF8';
         $this->addAddress($correo);
         $this->WordWrap = 50;
         $this->IsHTML(true);
-        $this->Subject = "Ticket Abierto";
+        $this->Subject = "Ticket Ingresado";
         //Igual//
         $cuerpo = file_get_contents('../public/NuevoTicket.html'); /* Ruta del template en formato HTML */
         /* parametros del template a remplazar */
@@ -49,7 +49,7 @@ class Email extends PHPMailer{
         $cuerpo = str_replace("lblCate", $categoria, $cuerpo);
 
         $this->Body = $cuerpo;
-        $this->AltBody = strip_tags("Ticket Abierto");
+        $this->AltBody = strip_tags("Ticket Ingresado");
         return $this->Send();
     }
 
