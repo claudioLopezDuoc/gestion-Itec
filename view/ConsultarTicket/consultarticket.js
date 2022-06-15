@@ -6,7 +6,6 @@ function init() {
     $("#ticket_form").on("submit", function(e) {
         guardar(e);
     });
-
 }
 
 $(document).ready(function() {
@@ -122,10 +121,11 @@ $(document).ready(function() {
             }
         }).DataTable();
     }
+
 });
 
 function ver(tick_id) {
-    window.open('http://localhost:80/gestion-itec/view/DetalleTicket/?ID=' + tick_id + '');
+    window.open('http://localhost:90/PERSONAL_HelpDesk/view/DetalleTicket/?ID=' + tick_id + '');
 }
 
 function asignar(tick_id) {
@@ -160,6 +160,35 @@ function guardar(e) {
             $('#ticket_data').DataTable().ajax.reload();
         }
     });
+}
+
+function CambiarEstado(tick_id) {
+    swal({
+            title: "HelpDesk",
+            text: "Esta seguro de Reabrir el Ticket?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonClass: "btn-warning",
+            confirmButtonText: "Si",
+            cancelButtonText: "No",
+            closeOnConfirm: false
+        },
+        function(isConfirm) {
+            if (isConfirm) {
+                $.post("../../controller/ticket.php?op=reabrir", { tick_id: tick_id, usu_id: usu_id }, function(data) {
+
+                });
+
+                $('#ticket_data').DataTable().ajax.reload();
+
+                swal({
+                    title: "HelpDesk!",
+                    text: "Ticket Abierto.",
+                    type: "success",
+                    confirmButtonClass: "btn-success"
+                });
+            }
+        });
 }
 
 init();

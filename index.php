@@ -14,7 +14,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Itec</title>
+<title>ItecGroup - Iniciar Sesión</title>
 
 <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
 <link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
@@ -39,7 +39,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
 
 
                 <form class="sign-box" action="" method="post" id="login_form">
-                    <input type="hidden" id="rol_id" name="rol_id" value="1" >
+                <input type="hidden" id="rol_id" value="1">
                     <div class="sign-avatar">
                         <img src="public/img/1.png" alt="" id="imgtipo">
                     </div>
@@ -124,7 +124,7 @@ if (isset($_POST["enviar"]) and $_POST["enviar"] == "si") {
     </script>
     <script src="public/js/app.js"></script>
 
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="index.js"></script>-->
 </body>
 
 </html>

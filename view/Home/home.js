@@ -34,7 +34,6 @@ $(document).ready(function() {
             });
         });
 
-
     } else {
         $.post("../../controller/ticket.php?op=total", function(data) {
             data = JSON.parse(data);
@@ -51,7 +50,6 @@ $(document).ready(function() {
             $('#lbltotalcerrado').html(data.TOTAL);
         });
 
-
         $.post("../../controller/ticket.php?op=grafico", function(data) {
             data = JSON.parse(data);
 
@@ -63,7 +61,6 @@ $(document).ready(function() {
                 labels: ['Value']
             });
         });
-
 
     }
 

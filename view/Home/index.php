@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"> <!-- Libreria Grafico -->
-	<title>Itec</>::Home</title>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+	<title>AnderCode</>::Home</title>
 </head>
 <body class="with-side-menu">
 
@@ -50,15 +50,14 @@
 				</div>
 			</div>
 
-				<section class="card">
-					<header class="card-header">
-						Grafico Estadístico
-					</header>
-					<div class="card-block">
-						<div id="divgrafico" style="height: 250px;"></div>
-					</div>
-				</section>
-
+			<section class="card">
+				<header class="card-header">
+					Grafico Estadístico
+				</header>
+				<div class="card-block">
+					<div id="divgrafico" style="height: 250px;"></div>
+				</div>
+			</section>
 			
 		</div>
 	</div>
@@ -66,8 +65,8 @@
 
 	<?php require_once("../MainJs/js.php");?>
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script> <!-- Libreria Grafico -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> <!-- Libreria Grafico -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 	<script type="text/javascript" src="home.js"></script>
 
 </body>
