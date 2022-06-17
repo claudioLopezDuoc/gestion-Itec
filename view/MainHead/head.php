@@ -29,3 +29,5 @@
 <link rel="stylesheet" href="../../public/css/separate/vendor/select2.min.css">
 
 <link rel="stylesheet" href="../../public/css/main.css">
+
+<link rel="stylesheet" href="../../public/css/separate/pages/profile.min.css">

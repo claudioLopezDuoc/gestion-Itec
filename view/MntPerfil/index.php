@@ -1,41 +1,84 @@
 <?php
-  require_once("../../config/conexion.php"); 
-  if(isset($_SESSION["usu_id"])){ 
+require_once("../../config/conexion.php");
+if (isset($_SESSION["usu_id"])) {
 ?>
-<!DOCTYPE html>
-<html>
-    <?php require_once("../MainHead/head.php");?>
+	<!DOCTYPE html>
+	<html>
+	<?php require_once("../MainHead/head.php"); ?>
 	<title>Itec - Perfil</title>
-</head>
-<body class="with-side-menu">
+	</head>
 
-    <?php require_once("../MainHeader/header.php");?>
+	<body class="with-side-menu">
 
-    <div class="mobile-menu-left-overlay"></div>
+		<?php require_once("../MainHeader/header.php"); ?>
 
-    <?php require_once("../MainNav/nav.php");?>
+		<div class="mobile-menu-left-overlay"></div>
 
-	<!-- Contenido -->
-	<div class="page-content">
-		<div class="container-fluid">
+		<?php require_once("../MainNav/nav.php"); ?>
 
-			<header class="section-header">
-				<div class="tbl">
-					<div class="tbl-row">
-						<div class="tbl-cell">
-							<h3>Perfil</h3>
-							<ol class="breadcrumb breadcrumb-simple">
-								<li><a href="..\Home\">Home</a></li>
-								<li class="active">Cambiar Contraseña</li>
-							</ol>
+		<!-- Contenido -->
+		<div class="page-content">
+			<div class="container-fluid">
+
+				<header class="section-header">
+					<div class="tbl">
+						<div class="tbl-row">
+							<div class="tbl-cell">
+								<h3>Perfil</h3>
+								<ol class="breadcrumb breadcrumb-simple">
+									<li><a href="..\Home\">Home</a></li>
+									<li class="active">Cambiar Contraseña</li>
+								</ol>
+							</div>
 						</div>
 					</div>
-				</div>
-			</header>
+				</header>
 
-			<div class="box-typical box-typical-padding">
 
-				<div class="row">
+
+				<section class="box-typical">
+					<div class="profile-card">
+						<div class="profile-card-photo">
+							<img src="../../public/img/<?php echo $_SESSION["rol_id"] ?>.png" alt="">
+						</div>
+						<div class="profile-card-name"><?php echo $_SESSION["usu_nom"] ?> <?php echo $_SESSION["usu_ape"] ?></div>
+						<div class="profile-card-status">
+							<?php
+							if ($_SESSION['rol_id'] == 1) {
+								echo 'Usuario';
+							} elseif ($_SESSION['rol_id'] == 2) {
+								echo 'Soporte';
+							} else {
+								echo 'Administrador';
+							}
+							?>
+					</div>
+					<!--.profile-card-->
+
+					<div class="profile-statistic tbl">
+						<div class="tbl-row">
+							<div class="tbl-cell">
+							<b class="number" id="lbltotal"></b>
+								Total de tickets
+							</div>
+							<div class="tbl-cell">
+							<b class="number" id="lbltotalabierto"></b>
+								Tickets en progreso
+							</div>
+							<div class="tbl-cell" >
+							<b class="number" id="lbltotalcerrado"></b>
+								Tickets cerrados
+							</div>
+						</div>
+					</div>
+				</section>
+				<!--.box-typical-->
+
+
+
+				<div class="box-typical box-typical-padding text-center">
+					<label class="form-label semibold">Cambiar contraseña</label>
+					<div class="row">
 						<div class="col-lg-6">
 							<fieldset class="form-group">
 								<label class="form-label semibold" for="exampleInput">Nueva Contraseña</label>
@@ -53,21 +96,22 @@
 						<div class="col-lg-12">
 							<button type="button" id="btnactualizar" class="btn btn-rounded btn-inline btn-primary">Actualizar</button>
 						</div>
-				</div>
+					</div>
 
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- Contenido -->
+		<!-- Contenido -->
 
-	<?php require_once("../MainJs/js.php");?>
-	
-	<script type="text/javascript" src="mntperfil.js"></script>
+		<?php require_once("../MainJs/js.php"); ?>
 
-</body>
-</html>
+		<script type="text/javascript" src="mntperfil.js"></script>
+
+	</body>
+
+	</html>
 <?php
-  } else {
-    header("Location:".Conectar::ruta()."index.php");
-  }
+} else {
+	header("Location:" . Conectar::ruta() . "index.php");
+}
 ?>
