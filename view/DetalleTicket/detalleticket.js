@@ -127,7 +127,7 @@ $(document).on("click", "#btnenviar", function() {
 
 $(document).on("click", "#btncerrarticket", function() {
     swal({
-            title: "HelpDesk",
+            title: "Itec",
             text: "Esta seguro de Cerrar el Ticket?",
             type: "warning",
             showCancelButton: true,
@@ -152,7 +152,7 @@ $(document).on("click", "#btncerrarticket", function() {
                 listardetalle(tick_id);
 
                 swal({
-                    title: "HelpDesk!",
+                    title: "Itec!",
                     text: "Ticket Cerrado correctamente.",
                     type: "success",
                     confirmButtonClass: "btn-success"

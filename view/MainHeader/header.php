@@ -44,7 +44,7 @@
                 <input type="hidden" id="rol_idx" value="<?php echo $_SESSION["rol_id"] ?>"><!-- Rol del Usuario-->
 
                 <div class="dropdown dropdown-typical">
-                    <a href="#" class="dropdown-toggle no-arr">
+                    <a href="..\MntPerfil\" class="dropdown-toggle no-arr">
                         <span class="font-icon font-icon-user"></span>
                         <span class="activity-line-item-user-status">
                             <?php
