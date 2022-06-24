@@ -210,7 +210,7 @@
                                         <div class="activity-line-item-user-status">
                                             <?php 
                                                 if ($row['rol_id']==1){
-                                                    echo 'Usuario';
+                                                    echo 'Cliente';
                                                 }elseif ($row['rol_id']==2){
                                                     echo 'Soporte';
                                                 }else{
@@ -260,6 +260,7 @@
                     $output["usu_nom"] = $row["usu_nom"];
                     $output["usu_ape"] = $row["usu_ape"];
                     $output["cat_nom"] = $row["cat_nom"];
+                    
                 }
                 echo json_encode($output);
             }   

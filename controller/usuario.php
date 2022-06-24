@@ -24,7 +24,7 @@
                 $sub_array[] = $row["usu_pass"];
 
                 if ($row["rol_id"]=="1"){
-                    $sub_array[] = '<span class="label label-pill label-primary">Usuario</span>';
+                    $sub_array[] = '<span class="label label-pill label-primary">Cliente</span>';
                 }else if ($row["rol_id"]=="2"){
                     $sub_array[] = '<span class="label label-pill label-info">Soporte</span>';
                 }else{

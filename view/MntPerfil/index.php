@@ -45,7 +45,7 @@ if (isset($_SESSION["usu_id"])) {
 						<div class="profile-card-status">
 							<?php
 							if ($_SESSION['rol_id'] == 1) {
-								echo 'Usuario';
+								echo 'Cliente';
 							} elseif ($_SESSION['rol_id'] == 2) {
 								echo 'Soporte';
 							} else {
