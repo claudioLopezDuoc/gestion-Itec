@@ -121,7 +121,7 @@ class Email extends PHPMailer{
         $this->Password = $this->gContrasena;
         $this->From = $this->gCorreo;
         $this->SMTPSecure = 'tls';
-        $this->FromName = $this->tu_nombre = "Ticket Asignado";
+        $this->FromName = $this->tu_nombre = "Gestion ItecGroup";
         $this->CharSet = 'UTF8';
         $this->addAddress($correo);
         $this->WordWrap = 50;
