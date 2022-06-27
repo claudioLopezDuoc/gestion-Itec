@@ -76,6 +76,12 @@
                             <span class="lbl">Historial de Tickets</span>
                         </a>
                     </li>
+                    <li class="blue-dirty">
+                        <a href="..\ConsultarCliente\">
+                            <span class="glyphicon glyphicon-folder-open"></span>
+                            <span class="lbl">Analisis Clientes</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         <?php
