@@ -120,9 +120,9 @@
         break;
 
         case "combo_usu";
-        $datos = $usuario->get_usuario();
-        if(is_array($datos)==true and count($datos)>0){
-            $html.= "<option label='Seleccionar'></option>";
+        $datos = $usuario->get_usuario_cli();
+            if(is_array($datos)==true and count($datos)>0){
+                $html.= "<option label='Seleccionar'></option>";
             foreach($datos as $row)
             {
                 $html.= "<option value='".$row['usu_id']."'>".$row['usu_nom'].' '.$row['usu_ape']."</option>";
@@ -130,6 +130,52 @@
             echo $html;
         }
         break;
+
+        case "informatica";
+            $datos=$usuario->get_ticket_inf($_POST["usu_id"]);  
+            if(is_array($datos)==true and count($datos)>0){
+                foreach($datos as $row)
+                {
+                    $output["TOTAL"] = $row["TOTAL"];
+                }
+                echo json_encode($output);
+            }
+        break;
+
+        case "redes";
+            $datos=$usuario->get_ticket_red($_POST["usu_id"]);  
+            if(is_array($datos)==true and count($datos)>0){
+                foreach($datos as $row)
+                {
+                    $output["TOTAL"] = $row["TOTAL"];
+                }
+                echo json_encode($output);
+            }
+        break;
+
+        case "teleco";
+            $datos=$usuario->get_ticket_tel($_POST["usu_id"]);  
+            if(is_array($datos)==true and count($datos)>0){
+                foreach($datos as $row)
+                {
+                    $output["TOTAL"] = $row["TOTAL"];
+                }
+                echo json_encode($output);
+            }
+        break;
+
+        case "otros";
+            $datos=$usuario->get_ticket_otro($_POST["usu_id"]);  
+            if(is_array($datos)==true and count($datos)>0){
+                foreach($datos as $row)
+                {
+                    $output["TOTAL"] = $row["TOTAL"];
+                }
+                echo json_encode($output);
+            }
+        break;
+
+        
 
     }
 ?>

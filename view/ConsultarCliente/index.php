@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <?php require_once("../MainHead/head.php");?>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 <title>Itec - Ticket por usuarios</title>
 </head>
 
@@ -28,6 +29,7 @@
             <button type="submit" id="btnenviar" class="btn btn-rounded">Consultar</button>
         </div>
         <div class="container-fluid">
+        <h3 class="text-center">Detalle de Cliente</h3>
             <div class="row">
                 <div class="col-xl-12">
                     <div class="row">
@@ -65,12 +67,68 @@
                 </div>
             </div>
 
+            <div class="container-fluid">
+            <h3 class="text-center">Tickets por Categoría</h3>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <article class="statistic-box purple">
+                                <div>
+                                    <div class="number" id="lblinformatica"></div>
+                                    <div class="caption">
+                                        <div>Informatica</div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-3">
+                            <article class="statistic-box purple">
+                                <div>
+                                    <div class="number" id="lblredes"></div>
+                                    <div class="caption">
+                                        <div>Redes</div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-3">
+                            <article class="statistic-box purple">
+                                <div>
+                                    <div class="number" id="lblteleco"></div>
+                                    <div class="caption">
+                                        <div>Telecomunicaciones</div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-sm-3">
+                            <article class="statistic-box purple">
+                                <div>
+                                    <div class="number" id="lblotros"></div>
+                                    <div class="caption">
+                                        <div>Otros</div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
         </div>
     </div>
     <!-- Contenido -->
 
 
     <?php require_once("../MainJs/js.php");?>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script src="//cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
 
     <script type="text/javascript" src="consultarcliente.js"></script>
 

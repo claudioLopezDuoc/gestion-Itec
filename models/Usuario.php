@@ -169,6 +169,51 @@
             return $resultado=$sql->fetchAll();
         }
 
+        public function get_usuario_cli(){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT * FROM tm_usuario where rol_id= 1";
+            $sql=$conectar->prepare($sql);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function get_ticket_inf($usu_id){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and cat_id= 1";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function get_ticket_red($usu_id){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and cat_id= 2";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function get_ticket_tel($usu_id){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and cat_id= 3";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+        public function get_ticket_otro($usu_id){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and cat_id= 4";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
 
     }
 ?>

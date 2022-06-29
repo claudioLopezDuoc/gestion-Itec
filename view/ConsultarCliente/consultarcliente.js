@@ -27,9 +27,26 @@ $(document).ready(function () {
             $('#lbltotalcerrado').html(data.TOTAL);
         });
 
-        $.post("../../controller/usuario.php?op=grafico", { usu_id: usu_id }, function (data) {
+
+        
+        $.post("../../controller/usuario.php?op=informatica", { usu_id: usu_id }, function (data) {
             data = JSON.parse(data);
+            $('#lblinformatica').html(data.TOTAL);
         });
+
+        $.post("../../controller/usuario.php?op=redes", { usu_id: usu_id }, function (data) {
+            data = JSON.parse(data);
+            $('#lblredes').html(data.TOTAL);
+        });
+        $.post("../../controller/usuario.php?op=teleco", { usu_id: usu_id }, function (data) {
+            data = JSON.parse(data);
+            $('#lblteleco').html(data.TOTAL);
+        });
+        $.post("../../controller/usuario.php?op=otros", { usu_id: usu_id }, function (data) {
+            data = JSON.parse(data);
+            $('#lblotros').html(data.TOTAL);
+        });
+       
         
     
     });
