@@ -266,4 +266,24 @@ class Ticket extends Conectar
         $sql->execute();
         return $resultado = $sql->fetchAll();
     }
+
+    public function get_ticket_asignado()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig is not null";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
+
+    public function get_ticket_noasignado()
+    {
+        $conectar = parent::conexion();
+        parent::set_names();
+        $sql = "SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_asig is null";
+        $sql = $conectar->prepare($sql);
+        $sql->execute();
+        return $resultado = $sql->fetchAll();
+    }
 }

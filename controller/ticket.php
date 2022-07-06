@@ -308,5 +308,27 @@
             echo json_encode($datos);
         break;
 
+        case "asignado";
+            $datos=$ticket->get_ticket_asignado();  
+            if(is_array($datos)==true and count($datos)>0){
+                foreach($datos as $row)
+                {
+                    $output["TOTAL"] = $row["TOTAL"];
+                }
+                echo json_encode($output);
+            }
+        break;
+
+        case "noasignado";
+            $datos=$ticket->get_ticket_noasignado();  
+            if(is_array($datos)==true and count($datos)>0){
+                foreach($datos as $row)
+                {
+                    $output["TOTAL"] = $row["TOTAL"];
+                }
+                echo json_encode($output);
+            }
+        break;
+
     }
 ?>

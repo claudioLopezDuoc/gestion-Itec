@@ -56,6 +56,32 @@ if (isset($_SESSION["usu_id"])) {
 						</div>
 					</div>
 				</div>
+				<div class="row " >
+					<div class="col-xl-12">
+						<div class="row">
+							<div class="col-sm-6">
+								<article class="statistic-box green">
+									<div>
+										<div class="number" id="lblasignado"></div>
+										<div class="caption">
+											<div>Ticket con Soporte Asignado</div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="col-sm-6">
+								<article class="statistic-box red">
+									<div>
+										<div class="number" id="lblnoasignado"></div>
+										<div class="caption">
+											<div>Ticket sin Soporte Asignado</div>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 				<div class="container">

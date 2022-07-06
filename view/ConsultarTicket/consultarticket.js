@@ -37,7 +37,6 @@ $(document).ready(function(){
                     console.log(e.responseText);	
                 }
             },
-            "ordering": false,
             "bDestroy": true,
             "responsive": true,
             "bInfo":true,
@@ -91,7 +90,6 @@ $(document).ready(function(){
                     console.log(e.responseText);	
                 }
             },
-            "ordering": false,
             "bDestroy": true,
             "responsive": true,
             "bInfo":true,
@@ -219,7 +217,7 @@ function guardar(e){
 
 function CambiarEstado(tick_id){
     swal({
-        title: "Itec",
+        title: "ItecGroup",
         text: "¿Reabrir Ticket?",
         type: "warning",
         showCancelButton: true,

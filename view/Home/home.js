@@ -21,6 +21,16 @@ $(document).ready(function () {
             $('#lbltotalcerrado').html(data.TOTAL);
         });
 
+        $.post("../../controller/usuario.php?op=asignado", { usu_id: usu_id }, function (data) {
+            data = JSON.parse(data);
+            $('#lblasignado').html(data.TOTAL);
+        });
+
+        $.post("../../controller/usuario.php?op=noasignado", { usu_id: usu_id }, function (data) {
+            data = JSON.parse(data);
+            $('#lblnoasignado').html(data.TOTAL);
+        });
+
         $.post("../../controller/usuario.php?op=grafico", { usu_id: usu_id }, function (data) {
             data = JSON.parse(data);
 
@@ -50,6 +60,17 @@ $(document).ready(function () {
             $('#lbltotalcerrado').html(data.TOTAL);
         });
 
+        $.post("../../controller/ticket.php?op=asignado", function (data) {
+            data = JSON.parse(data);
+            $('#lblasignado').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=noasignado", function (data) {
+            data = JSON.parse(data);
+            $('#lblnoasignado').html(data.TOTAL);
+        });
+
+
         $.post("../../controller/ticket.php?op=grafico", function (data) {
             data = JSON.parse(data);
 
@@ -78,6 +99,16 @@ $(document).ready(function () {
         $.post("../../controller/ticket.php?op=totalcerrado", function (data) {
             data = JSON.parse(data);
             $('#lbltotalcerrado').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=asignado", function (data) {
+            data = JSON.parse(data);
+            $('#lblasignado').html(data.TOTAL);
+        });
+
+        $.post("../../controller/ticket.php?op=noasignado", function (data) {
+            data = JSON.parse(data);
+            $('#lblnoasignado').html(data.TOTAL);
         });
 
         $.post("../../controller/ticket.php?op=grafico", function (data) {

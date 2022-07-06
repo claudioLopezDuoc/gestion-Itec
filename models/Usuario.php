@@ -215,5 +215,25 @@
             return $resultado=$sql->fetchAll();
         }
 
+        public function get_usuario_asignado($usu_id){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and usu_asig is not null";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+
+        public function get_usuario_noasignado($usu_id){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT COUNT(*) as TOTAL FROM tm_ticket where usu_id = ? and usu_asig is null";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+        }
+
     }
 ?>
